@@ -1,0 +1,36 @@
+<%- include('partials/head'); %>
+    <title><%= gameName %></title>
+    </head>
+    <%- include('partials/header'); %>
+        <div class="content">
+            <h2>
+                <%= gameName %>
+            </h2>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Runner</th>
+                        <th>Time <br><i
+                                style="font-size: 10pt; font-weight: lighter; color: aquamarine;">(HH:MM:SS:MS)</i></th>
+                        <th>Date <br><i
+                                style="font-size: 10pt; font-weight: lighter; color: aquamarine;">(MM/DD/YYYY)</i></th>
+                    </tr>
+                    <% gameTimes.forEach(function(gameTime) { %>
+                        <tr>
+                            <td class="gameTitle">
+                                <%= gameTime.submitter %>
+                            </td>
+                            <td class="gameTime">
+                                <%= gameTime.duration %>
+                            </td>
+                            <td class="gameHolder">
+                                <%= gameTime.createdAt.toLocaleDateString() %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </table>
+            </div>
+        </div>
+
+        <%- include('partials/footer'); %>

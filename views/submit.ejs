@@ -1,0 +1,55 @@
+<%- include('partials/head'); %>
+  <title>Submit Your Time</title>
+  <script src="submit.js" defer></script>
+  </head>
+  <%- include('partials/header'); %>
+    <div class="content">
+      <table>
+        <form action="/push" class="timeSubmission" method="POST">
+          <tr>
+            <td><label for="gameName">Game:</label></td>
+            <td>
+              <select name="gameName" id="gameName">
+                <option value="" selected disabled>Choose a game or add a new one</option>
+                <% for(var i=0; i<gameRecords.length; i++) { %>
+                  <option value="<%= gameRecords[i].gameName %>">
+                    <%= gameRecords[i].gameName %>
+                  </option>
+                  <% } %>
+                    <option value="newGame">Add a new game</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="addGame">
+              <label for="newGameName">Enter new game name:</label>
+            </td>
+            <td class="addGame">
+              <input type="text" name="newGameName" id="newGameName" placeholder="New Game Name" disabled>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="time">Time:</label></td>
+            <td class="duration">
+              <input type="number" name="timeHour" id="timeHour" min="0" placeholder="HH">
+              <input type="number" name="timeMinute" id="timeMinute" min="0" max="59" placeholder="MM">
+              <input type="number" name="timeSecond" id="timeSecond" min="0" max="59" placeholder="SS">
+              <input type="number" name="timeMilisecond" id="timeMilisecond" min="0" max="99" placeholder="MS">
+            </td>
+          </tr>
+          <tr>
+            <td><label for="submitter">Submitter Name:</label></td>
+            <td class="name">
+              <input type="text" name="submitter" id="submitter">
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-left:65%;">
+              <input type="submit" value="submit">
+            </td>
+          </tr>
+        </form>
+      </table>
+    </div>
+
+    <%- include('partials/footer'); %>

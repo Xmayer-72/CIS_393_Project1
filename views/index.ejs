@@ -1,0 +1,33 @@
+<%- include('partials/head'); %>
+    <title>GCBF | Games Can Be Fast</title>
+    </head>
+    <%- include('partials/header'); %>
+        <div class="content">
+            <h2>Game Time Records:</h2>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Game/Challenge</th>
+                        <th>Fastest Time <br><i
+                                style="font-size: 10pt; font-weight: lighter; color: aquamarine;">(HH:MM:SS:MS)</i></th>
+                        <th>Record Holder</th>
+                    </tr>
+                    <% fastestGameTimes.forEach(function(game) { %>
+                        <tr>
+                            <td class="gameTitle"><a href='/game/<%= game.gameName %>'>
+                                    <%= game.gameName %>
+                                </a></td>
+                            <td class="gameTime">
+                                <%= game.shortestTime %>
+                            </td>
+                            <td class="gameHolder">
+                                <%= game.submitter %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </table>
+            </div>
+        </div>
+
+        <%- include('partials/footer'); %>
