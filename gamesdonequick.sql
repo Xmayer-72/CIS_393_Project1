@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gametimes`
+-- Table structure for table `gameTimes`
 --
 
-CREATE TABLE `gametimes` (
+CREATE TABLE `gameTimes` (
   `ID` int(11) NOT NULL,
   `gameName` varchar(255) NOT NULL,
   `duration` time(2) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `gametimes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `gametimes`
+-- Dumping data for table `gameTimes`
 --
 
-INSERT INTO `gametimes` (`ID`, `gameName`, `duration`, `submitter`, `createdAt`) VALUES
+INSERT INTO `gameTimes` (`ID`, `gameName`, `duration`, `submitter`, `createdAt`) VALUES
 (1, 'Fallout New Vegas', '01:52:32.95', 'Xander', '2023-04-14 01:36:14'),
 (2, 'Fallout New Vegas', '25:25:25.25', 'Spiff', '2023-04-14 02:28:33'),
 (3, 'Fallout 4', '35:35:25.95', 'Xander 2nd', '2023-04-14 02:29:03'),
@@ -50,9 +50,9 @@ INSERT INTO `gametimes` (`ID`, `gameName`, `duration`, `submitter`, `createdAt`)
 --
 
 --
--- Indexes for table `gametimes`
+-- Indexes for table `gameTimes`
 --
-ALTER TABLE `gametimes`
+ALTER TABLE `gameTimes`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -60,9 +60,9 @@ ALTER TABLE `gametimes`
 --
 
 --
--- AUTO_INCREMENT for table `gametimes`
+-- AUTO_INCREMENT for table `gameTimes`
 --
-ALTER TABLE `gametimes`
+ALTER TABLE `gameTimes`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
